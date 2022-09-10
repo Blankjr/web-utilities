@@ -50,10 +50,7 @@ function qrgenerator() {
         }}
       />
       {qrCodeValue != "" && (
-        <div>
-          <QRCode className="m-4" ref={qrCodeDOM} value={qrCodeValue} bgColor={backgroundColor} fgColor={foregroundColor} />
-          <SvgDownloader />
-        </div>
+        <SvgDownloader qrCodeValue={qrCodeValue} backgroundColor={backgroundColor} foregroundColor={foregroundColor} />
       )}
     </div>
   )
