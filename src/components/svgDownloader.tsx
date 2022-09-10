@@ -14,8 +14,12 @@ function downloadBlob(blob: Blob, filename: string) {
 
   setTimeout(() => URL.revokeObjectURL(objectUrl), 5000);
 }
-
-export default function SvgDownloader(props: any) {
+interface QRCodeprops {
+  qrCodeValue: string
+  backgroundColor: `#{string}`
+  foregroundColor: `#{string}`
+}
+export default function SvgDownloader(props: QRCodeprops) {
   const svgRef = useRef(null);
   const downloadSVG = useCallback(() => {
     if (svgRef.current) {
@@ -35,4 +39,3 @@ export default function SvgDownloader(props: any) {
     </>
   )
 }
-
