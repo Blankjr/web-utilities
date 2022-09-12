@@ -20,7 +20,7 @@ interface QRCodeprops {
   foregroundColor: `#{string}`
 }
 export default function SvgDownloader(props: QRCodeprops) {
-  const svgRef = useRef(null);
+  const svgRef = useRef<HTMLDivElement>(null)
   const downloadSVG = useCallback(() => {
     if (svgRef.current) {
       const svg = svgRef.current.innerHTML;
