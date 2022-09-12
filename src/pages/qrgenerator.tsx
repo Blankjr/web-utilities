@@ -1,18 +1,16 @@
 // import React, { useState, useRef } from "react";
-import React, { useRef, useState } from "react";
-import QRCode from "react-qr-code";
+import React, { useState } from "react";
 import { HexColorPicker, HexColorInput } from "react-colorful";
 import styles from "../styles/qrgenerator.module.css"
 import { useDebounce } from 'usehooks-ts'
 import SvgDownloader from "../components/svgDownloader";
 
-function qrgenerator() {
+function QRGenerator() {
   const [qrCodeValue, setQrCodeValue] = useState("");
   const [foregroundColor, setForegroundColor] = useState("#000000")
   const debouncedForegroundColor = useDebounce<string>(foregroundColor, 200)
   const [backgroundColor, setBackgroundColor] = useState("#FFFFFF")
   const debouncedBackgroundColor = useDebounce<string>(backgroundColor, 200)
-  let qrCodeDOM = useRef(null)
 
   return (
     <div className="flex flex-col relative bg-grey font-mono items-center min-h-screen border-t-2 border-active">
@@ -56,5 +54,5 @@ function qrgenerator() {
   )
 }
 
-export default qrgenerator
+export default QRGenerator
 

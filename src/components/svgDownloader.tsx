@@ -16,8 +16,8 @@ function downloadBlob(blob: Blob, filename: string) {
 }
 interface QRCodeprops {
   qrCodeValue: string
-  backgroundColor: `#{string}`
-  foregroundColor: `#{string}`
+  backgroundColor: string
+  foregroundColor: string
 }
 export default function SvgDownloader(props: QRCodeprops) {
   const svgRef = useRef<HTMLDivElement>(null)
